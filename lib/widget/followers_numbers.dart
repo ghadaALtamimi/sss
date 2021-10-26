@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class NumbersWidget extends StatelessWidget {
+class FollowersNumbers extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Row(
         mainAxisAlignment: MainAxisAlignment.end,

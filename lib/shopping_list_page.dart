@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:instayum1/checkboxState.dart';
 
-class shopinglistPage extends StatefulWidget {
+class ShoppingListPage extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => shopinglist();
+  State<StatefulWidget> createState() => ShoppingListState();
 }
 
-class shopinglist extends State<shopinglistPage> {
+class ShoppingListState extends State<ShoppingListPage> {
   bool outvalue = false;
   var checkedstyle = TextDecoration.none;
   var listOfIngrediant = [
@@ -36,7 +36,7 @@ class shopinglist extends State<shopinglistPage> {
           )),
       onChanged: (value) {
         setState(() {
-          checkbox.outvalue = value!;
+          checkbox.outvalue = value;
           if (checkbox.outvalue == true) {
             checkbox.checkedstyle = TextDecoration.lineThrough;
           } else {

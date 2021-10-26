@@ -273,9 +273,9 @@ class addRecipe extends State<addRecipePage> {
                         height: 1,
                         color: Colors.grey[700],
                       ),
-                      onChanged: (String? newValue) {
+                      onChanged: (String newValue) {
                         setState(() {
-                          curentSelectedValue = newValue!;
+                          curentSelectedValue = newValue;
                         });
                       },
                       style: const TextStyle(color: Color(0xFFeb6d44)),
@@ -315,9 +315,9 @@ class addRecipe extends State<addRecipePage> {
                         height: 1,
                         color: Colors.grey[700],
                       ),
-                      onChanged: (String? newValue) {
+                      onChanged: (String newValue) {
                         setState(() {
-                          CategorycurentSelectedValue = newValue!;
+                          CategorycurentSelectedValue = newValue;
                         });
                       },
                       style: const TextStyle(color: Color(0xFFeb6d44)),
@@ -356,9 +356,9 @@ class addRecipe extends State<addRecipePage> {
                         height: 1,
                         color: Colors.grey[700],
                       ),
-                      onChanged: (String? newValue) {
+                      onChanged: (String newValue) {
                         setState(() {
-                          cusinurentSelectedValue = newValue!;
+                          cusinurentSelectedValue = newValue;
                         });
                       },
                       style: const TextStyle(color: Color(0xFFeb6d44)),
