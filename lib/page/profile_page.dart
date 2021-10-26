@@ -71,15 +71,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               top: BorderSide(color: Colors.grey, width: 0.5))),
                       child: TabBarView(
                         children: <Widget>[
-                          GridView(
-                              gridDelegate:
-                                  SliverGridDelegateWithMaxCrossAxisExtent(
-                                maxCrossAxisExtent: 1000,
-                                childAspectRatio: 3 / 2,
-                                crossAxisSpacing: 20,
-                                mainAxisSpacing: 20,
-                              ),
-                              children: <Widget>[my_recipes()]),
+                          my_recipes(),
                           my_meal_plans(),
                           bookmarked_recipes(),
                         ],

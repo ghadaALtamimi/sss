@@ -3,203 +3,35 @@ import 'package:flutter/material.dart';
 class my_meal_plans extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Container(
+    return Container(
+      margin: EdgeInsets.all(15),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Container(
-            decoration:
-                BoxDecoration(border: Border.all(color: Colors.grey.shade300)),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Column(
-                    children: [
-                      Text('Sunday'),
-                      MaterialButton(
-                        height: 60.0,
-                        minWidth: 100.0,
-                        color: Colors.grey.shade200,
-                        onPressed: () => {},
-                        splashColor: Colors.redAccent,
-                      )
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text('Monday'),
-                      MaterialButton(
-                        height: 60.0,
-                        minWidth: 100.0,
-                        color: Colors.grey.shade200,
-                        onPressed: () => {},
-                        splashColor: Colors.redAccent,
-                      )
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text('Tuseday'),
-                      MaterialButton(
-                        height: 60.0,
-                        minWidth: 100.0,
-                        color: Colors.grey.shade200,
-                        onPressed: () => {},
-                        splashColor: Colors.redAccent,
-                      )
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text('Wednesday'),
-                      // ignore: deprecated_member_use
-                      MaterialButton(
-                        height: 60.0,
-                        minWidth: 100.0,
-                        color: Colors.grey.shade200,
-                        onPressed: () => {},
-                        splashColor: Colors.redAccent,
-                      )
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text('Thursday'),
-                      MaterialButton(
-                        height: 60.0,
-                        minWidth: 100.0,
-                        color: Colors.grey.shade200,
-                        onPressed: () => {},
-                        splashColor: Colors.redAccent,
-                      ),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text('Friday'),
-                      MaterialButton(
-                        height: 60.0,
-                        minWidth: 100.0,
-                        color: Colors.grey.shade200,
-                        onPressed: () => {},
-                        splashColor: Colors.redAccent,
-                      ),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text('Stturday'),
-                      MaterialButton(
-                        height: 60.0,
-                        minWidth: 100.0,
-                        color: Colors.grey.shade200,
-                        onPressed: () => {},
-                        splashColor: Colors.redAccent,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+          Card(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                const ListTile(
+                  title: Text('Keto dite plan'),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    const SizedBox(width: 8),
+                    TextButton(
+                      child: const Text('make it my plan'),
+                      onPressed: () {/* ... */},
+                    ),
+                    const SizedBox(width: 8),
+                  ],
+                ),
+              ],
             ),
-          ),
-          Container(
-            decoration:
-                BoxDecoration(border: Border.all(color: Colors.grey.shade300)),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Column(
-                    children: [
-                      Text('Sunday'),
-                      MaterialButton(
-                        height: 60.0,
-                        minWidth: 100.0,
-                        color: Colors.grey.shade200,
-                        onPressed: () => {},
-                        splashColor: Colors.redAccent,
-                      )
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text('Monday'),
-                      MaterialButton(
-                        height: 60.0,
-                        minWidth: 100.0,
-                        color: Colors.grey.shade200,
-                        onPressed: () => {},
-                        splashColor: Colors.redAccent,
-                      )
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text('Tuseday'),
-                      MaterialButton(
-                        height: 60.0,
-                        minWidth: 100.0,
-                        color: Colors.grey.shade200,
-                        onPressed: () => {},
-                        splashColor: Colors.redAccent,
-                      )
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text('Wednesday'),
-                      // ignore: deprecated_member_use
-                      MaterialButton(
-                        height: 60.0,
-                        minWidth: 100.0,
-                        color: Colors.grey.shade200,
-                        onPressed: () => {},
-                        splashColor: Colors.redAccent,
-                      )
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text('Thursday'),
-                      MaterialButton(
-                        height: 60.0,
-                        minWidth: 100.0,
-                        color: Colors.grey.shade200,
-                        onPressed: () => {},
-                        splashColor: Colors.redAccent,
-                      ),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text('Friday'),
-                      MaterialButton(
-                        height: 60.0,
-                        minWidth: 100.0,
-                        color: Colors.grey.shade200,
-                        onPressed: () => {},
-                        splashColor: Colors.redAccent,
-                      ),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text('Stturday'),
-                      MaterialButton(
-                        height: 60.0,
-                        minWidth: 100.0,
-                        color: Colors.grey.shade200,
-                        onPressed: () => {},
-                        splashColor: Colors.redAccent,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+            elevation: 8,
+            shadowColor: Colors.orange,
+            shape: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(color: Colors.white)),
           ),
         ],
       ),

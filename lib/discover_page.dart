@@ -17,19 +17,20 @@ class discover extends State<discoverPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GridView(
-          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 600,
-            childAspectRatio: 1 / 2,
-            crossAxisSpacing: 20,
-          ),
-          children: <Widget>[
-            Container(
-              height: 600,
-              child: my_recipes(),
-              padding: EdgeInsets.only(top: 20),
-            ),
-          ]),
+      // body: GridView(
+      //     gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+      //       maxCrossAxisExtent: 600,
+      //       childAspectRatio: 1 / 2,
+      //       crossAxisSpacing: 20,
+      //     ),
+      //     children: <Widget>[
+      body: Container(
+        height: 600,
+        child: my_recipes(),
+        padding: EdgeInsets.only(top: 20),
+      ),
+      // ]
+      // ),
 
       //Padding(
       //     // padding: EdgeInsets.symmetric(
