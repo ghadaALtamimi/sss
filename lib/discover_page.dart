@@ -24,11 +24,62 @@ class discover extends State<discoverPage> {
       //       crossAxisSpacing: 20,
       //     ),
       //     children: <Widget>[
+      // body: Stack(
+      //   children: <Widget>[
+      //     Container(
+      //       width: double.infinity,
+      //       height: 200,
+      //       margin: EdgeInsets.fromLTRB(10, 15, 15, 10),
+      //       padding: EdgeInsets.only(bottom: 10, top: 15),
+      //       decoration: BoxDecoration(
+      //         border: Border.all(color: Color(0xFFeb6d44), width: 1),
+      //         borderRadius: BorderRadius.circular(5),
+      //         shape: BoxShape.rectangle,
+      //       ),
+      //       child: Container(
+      //         margin: EdgeInsets.only(
+      //           bottom: 15,
+      //           left: 50,
+      //         ),
+      //         // child: ListView(
+      //         //children: [
+      //         child: Container(
+      //           alignment: Alignment.centerLeft,
+      //           height: 200,
+      //           child: my_recipes(),
+      //           //padding: EdgeInsets.only(top: 20),
+      //         ),
+      //         //   ],
+      //         // ),
+      //       ),
+      //     ),
+      //     Positioned(
+      //         left: 25,
+      //         top: 5,
+      //         child: Container(
+      //           padding: EdgeInsets.only(bottom: 10, left: 10, right: 10),
+
+      //           //color: Colors.white,
+      //           child: Text(
+      //             "Recommended recipes ",
+      //             style: TextStyle(
+      //               backgroundColor: Colors.grey[50],
+      //               fontSize: 17,
+      //               fontWeight: FontWeight.bold,
+      //               color: Colors.grey[700],
+      //             ),
+      //           ),
+      //         )),
+      //   ],
+      // ),
+      //------------
       body: Container(
         height: 600,
         child: my_recipes(),
         padding: EdgeInsets.only(top: 20),
       ),
+
+      //------------
       // ]
       // ),
 

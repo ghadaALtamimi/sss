@@ -26,12 +26,12 @@ class shopinglist extends State<shopinglistPage> {
 
   Widget creatCheckbox(checkboxState checkbox) => CheckboxListTile(
       controlAffinity: ListTileControlAffinity.leading,
-      activeColor: Colors.orange[600],
+      activeColor: Color(0xFFeb6d44),
       value: checkbox.outvalue,
       title: Text(checkbox.title,
           style: TextStyle(
             decoration: checkbox.checkedstyle,
-            decorationColor: Colors.orange[600],
+            decorationColor: Color(0xFFeb6d44),
             decorationThickness: 4,
           )),
       onChanged: (value) {
