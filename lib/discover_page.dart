@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:instayum1/page/my_recipes.dart';
+import 'package:instayum1/screen/my_recipes_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:instayum1/utils/user_preferences.dart';
-import 'page/my_recipes.dart';
+import 'screen/my_recipes_screen.dart';
 
 //import 'package:flutter/material.dart';
 
@@ -13,7 +13,7 @@ class discoverPage extends StatefulWidget {
 
 class discover extends State<discoverPage> {
   bool value = false;
-  final cookingEnthusist = UserPreferences.myCooking_Enthusiast;
+  //final cookingEnthusist = UserPreferences.myCooking_Enthusiast;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

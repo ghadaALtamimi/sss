@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 class Recipe {
   final String id;
   final String recipeName;
@@ -8,12 +10,12 @@ class Recipe {
   final int duration;
 
   const Recipe({
-    required this.id,
-    required this.recipeName,
-    required this.category,
-    required this.imageURL,
-    required this.ingredients,
-    required this.steps,
-    required this.duration,
+    @required this.id,
+    @required this.recipeName,
+    @required this.category,
+    @required this.imageURL,
+    @required this.ingredients,
+    @required this.steps,
+    @required this.duration,
   });
 }

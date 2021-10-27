@@ -1,29 +1,36 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:instayum1/add_recipe_page.dart';
 import 'package:instayum1/discover_page.dart';
-import 'package:instayum1/page/profile_page.dart';
-import 'package:instayum1/shopinglist_page.dart';
+import 'package:instayum1/screen/profile_screen.dart';
+import 'package:instayum1/shopping_list_page.dart';
 
-import 'mealplaner.dart';
+import 'meal_plans.dart';
 
-class pages extends StatefulWidget {
+//*********************************************************************
+//********************************************************************
+//********************************************************************
+// change the name to Appbar
+//********************************************************************
+//********************************************************************
+class MainPages extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => appPages();
 }
 
-class appPages extends State<pages> {
+class appPages extends State<MainPages> {
   var appBarTitel = "profile";
   int indexOfPages = 4;
   List<Widget> _listOfPagesContent = [
     //---------discover page  0-------------
     discoverPage(),
     //--------- mealPlaner page 1------------
-    mealPlanerPage(),
+    MealPlans(),
     //----------add recipe page 2------------
     addRecipePage(),
     //----------shopping list page 3---------
-    shopinglistPage(),
+    ShoppingListPage(),
     //----------profile page 4---------------
     ProfilePage(),
   ];
@@ -43,14 +50,97 @@ class appPages extends State<pages> {
     });
   }
 
+// showAlertDialog() function is used to show a confirmation alert when user click on logout button
+  showAlertDialog(BuildContext context) {
+    // set up the buttons
+    Widget noButton = RaisedButton(
+      color: Colors.white,
+      shape: RoundedRectangleBorder(
+        side: BorderSide(color: Theme.of(context).accentColor, width: 2),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Text(
+        "No",
+        style: TextStyle(
+          color: Theme.of(context).accentColor,
+        ),
+      ),
+      onPressed: () {
+        Navigator.of(context).pop();
+      },
+    );
+    Widget yesButton = RaisedButton(
+      child: Text(
+        "Yes",
+      ),
+      onPressed: () {
+        FirebaseAuth.instance.signOut();
+        Navigator.of(context).pop();
+      },
+    );
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      //backgroundColor: Theme.of(context).backgroundColor,
+      title: Center(
+          child: Text(
+        "Logout",
+        style: TextStyle(
+            fontWeight: FontWeight.bold, color: Theme.of(context).accentColor),
+      )),
+      content: Text(
+        "Are you sure you want to logout of the account? ",
+        style: TextStyle(color: Color(0xFF444444)),
+      ),
+      actions: [
+        noButton,
+        yesButton,
+      ],
+    );
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 5,
       child: Scaffold(
         appBar: AppBar(
+          actions: [
+            DropdownButton(
+              icon: Icon(
+                Icons.more_vert,
+                color: Theme.of(context).primaryIconTheme.color,
+              ),
+              items: [
+                DropdownMenuItem(
+                  child: Container(
+                    child: Row(
+                      children: <Widget>[
+                        Icon(Icons.exit_to_app,
+                            color: Colors.black), // change the color
+                        SizedBox(width: 2),
+                        Text("Logout"),
+                      ],
+                    ),
+                  ),
+                  value: "logout",
+                ),
+              ],
+              onChanged: (itemIdentifier) {
+                if (itemIdentifier == "logout") {
+                  showAlertDialog(context);
+                }
+              },
+            )
+          ],
           leading: Container(
-              color: Colors.white,
+              //color: Colors.white,
               child: Image.asset("assets/images/logo.png")),
           backgroundColor: Color(0xFFeb6d44),
           title: Text(appBarTitel),

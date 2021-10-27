@@ -9,7 +9,7 @@ class recipe_Item extends StatelessWidget {
   final List<String> ingredients;
   final List<String> steps;
   final int duration;
-  const recipe_Item(Key? key, this.id, this.recipeName, this.category,
+  const recipe_Item(Key key, this.id, this.recipeName, this.category,
       this.imageURL, this.ingredients, this.steps, this.duration);
 
   @override

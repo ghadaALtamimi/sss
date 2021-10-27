@@ -1,76 +1,70 @@
-import 'dart:io';
+// import 'dart:io';
 
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
 
-class ProfileWidget extends StatelessWidget {
-  final String imagePath;
-  final VoidCallback onClicked;
+// class ProfileWidget extends StatefulWidget {
+//   final String imagePath;
+//   final VoidCallback onClicked;
 
-  const ProfileWidget({
-    Key? key,
-    required this.imagePath,
-    required this.onClicked,
-  }) : super(key: key);
+//   const ProfileWidget({
+//     Key key,
+//     @required this.imagePath,
+//     @required this.onClicked,
+//   }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    final color = Theme.of(context).colorScheme.primary;
+//   @override
+//   ProfileWidgetState createState() => ProfileWidgetState();
+// }
 
-    return Center(
-      child: Stack(
-        children: [
-          buildImage(),
-          Positioned(
-            bottom: 0,
-            right: 4,
-            child: buildEditIcon(color),
-          ),
-        ],
-      ),
-    );
-  }
+// class ProfileWidgetState extends State<ProfileWidget> {
+//   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+//   String userUsername = "";
+//   String imageURL = "";
 
-  Widget buildImage() {
-    final image = NetworkImage(imagePath);
+// //getData() to get the data of users like username, image_url from database
+//   void getData() async {
+//     User user = _firebaseAuth.currentUser;
+//     FirebaseFirestore.instance
+//         .collection("users")
+//         .doc(user.uid)
+//         .snapshots()
+//         .listen((userData) {
+//       setState(() {
+//         userUsername = userData.data()['username'];
+//         imageURL = userData.data()['image_url'];
+//       });
+//     });
+//   }
 
-    return ClipOval(
-      child: Material(
-        color: Colors.grey.shade400,
-        child: Ink.image(
-          image: image,
-          fit: BoxFit.cover,
-          width: 100,
-          height: 100,
-          child: InkWell(onTap: onClicked),
-        ),
-      ),
-    );
-  }
+//   void initState() {
+//     super.initState();
+//     getData(); //we call the method here to get the data immediately when init the page.
+//   }
 
-  Widget buildEditIcon(Color color) => buildCircle(
-        color: Colors.white,
-        all: 3,
-        child: buildCircle(
-          color: color,
-          all: 6,
-          child: Icon(
-            Icons.edit,
-            color: Colors.white,
-            size: 15,
-          ),
-        ),
-      );
+//   @override
+//   Widget build(BuildContext context) {
+//     final color = Theme.of(context).colorScheme.primary;
 
-  Widget buildCircle({
-    required Widget child,
-    required double all,
-    required Color color,
-  }) =>
-      ClipOval(
-        child: Container(
-          padding: EdgeInsets.all(all),
-          color: Color(0xFFeb6d44),
-          child: child,
-        ),
-      );
-}
+//     return Center(child: buildImage());
+//   }
+
+//   Widget buildImage() {
+//     final image = NetworkImage(imageURL);
+
+//     return ClipOval(
+//       child: Material(
+//         color: Colors.grey.shade400,
+//         child: Ink.image(
+//           image: image,
+//           fit: BoxFit.cover,
+//           width: 100,
+//           height: 100,
+//           child:
+//               InkWell(onTap: widget.onClicked), // i suggest to delete the edit.
+//         ),
+//       ),
+//     );
+//   }
+// }
